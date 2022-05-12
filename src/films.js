@@ -33,7 +33,7 @@ function orderAlphabetically(array) {
 
 // Exercise 5: Order by year, ascending
 function orderByYear(array) {
-  let arrPeliculas = array;
+  let arrPeliculas = [...array];
   //  para comparar mas de un valor añadimos nuevos if abajo segun la prioridad de ordenamiento.
   let arrPeliculasSort = arrPeliculas.sort(( a, b )=>{ 
     // comparamos los años para que ordene de mayor a menos.
