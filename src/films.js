@@ -33,14 +33,27 @@ function orderAlphabetically(array) {
 
 // Exercise 5: Order by year, ascending
 function orderByYear(array) {
-  let arrPeliculas = array;
-
-  let arrPeliculasSort = arrPeliculas.sort(( a, b )=>{ 
-    if(a.year == b.year){
-      a.name - b.name
+//  para comparar mas de un valor añadimos nuevos if abajo segun la prioridad de ordenamiento.
+  let arrPeliculasSort = array.sort(( a, b )=>{ 
+    // comparamos los años para que ordene de mayor a menos.
+    if(a.year > b.year){
+      return 1;
     }
-    return a-b;
+    if(a.year < b.year){
+      return -1;
+    }
+    // Una vez comparado si el año es mayor o menor comparara si son iguales.
+    // Le pasamos unos nuevos if que en caso de que los años sean iguales, comparara la propiedad "title" alfabeticamente. 
+    if(a.title > b.title){
+      return 1;
+    }
+    if(a.title < b.title){
+      return -1;
+    }
+    // Por ultimo si las propiedades son iguales de nuevo simplemente devolvemos 0.
+    return 0;
   });
+  
   return arrPeliculasSort;
 }
 
