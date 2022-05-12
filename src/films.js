@@ -33,8 +33,9 @@ function orderAlphabetically(array) {
 
 // Exercise 5: Order by year, ascending
 function orderByYear(array) {
-//  para comparar mas de un valor añadimos nuevos if abajo segun la prioridad de ordenamiento.
-  let arrPeliculasSort = array.sort(( a, b )=>{ 
+  let arrPeliculas = array;
+  //  para comparar mas de un valor añadimos nuevos if abajo segun la prioridad de ordenamiento.
+  let arrPeliculasSort = arrPeliculas.sort(( a, b )=>{ 
     // comparamos los años para que ordene de mayor a menos.
     if(a.year > b.year){
       return 1;
@@ -53,7 +54,7 @@ function orderByYear(array) {
     // Por ultimo si las propiedades son iguales de nuevo simplemente devolvemos 0.
     return 0;
   });
-  
+  console.log("EXERCICE 5 ->", arrPeliculasSort);
   return arrPeliculasSort;
 }
 
