@@ -16,7 +16,7 @@ function getMoviesFromDirector(array, director) {
 function moviesAverageOfDirector(array, director) {
   // filtrar por la array por el director para sacar la score y luego usar el reduce para sacar la media.
   let scoreDirector = array.filter(x => x.director == director);
-  let averageDirector = scoreDirector.reduce((acc, crr) => acc + crr.score , 0)
+  let averageDirector = scoreDirector.reduce((acc, crr) => acc + crr.score , 0);
   var averageScore = averageDirector/scoreDirector.length;
   return averageScore;
 }
@@ -59,8 +59,13 @@ function orderByYear(array) {
 }
 
 // Exercise 6: Calculate the average of the movies in a category
-function moviesAverageByCategory() {
-
+function moviesAverageByCategory(array) {
+  let categoria = "Action";
+  
+  let dramaMovies = array.filter(x => x.genre == categoria);
+  let averageMovies = dramaMovies.reduce((acc, crr) => acc + crr.score , 0);
+  let averageScore = averageMovies/dramaMovies.lenght;
+  return averageScore;
 }
 
 // Exercise 7: Modify the duration of movies to minutes
@@ -69,8 +74,13 @@ function hoursToMinutes() {
 }
 
 // Exercise 8: Get the best film of a year
-function bestFilmOfYear() {
+function bestFilmOfYear(array) {
+  let year = 1957;
 
+  let movies = array.filter(x => x.year == year);
+  let moviesSort = movies.sort((a,b)=>{b-a});
+  return moviesSort[0];
+  
 }
 
 
