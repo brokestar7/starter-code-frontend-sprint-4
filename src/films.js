@@ -54,18 +54,19 @@ function orderByYear(array) {
     // Por ultimo si las propiedades son iguales de nuevo simplemente devolvemos 0.
     return 0;
   });
-  console.log("EXERCICE 5 ->", arrPeliculasSort);
+  // console.log("EXERCICE 5 ->", arrPeliculasSort);
   return arrPeliculasSort;
 }
 
 // Exercise 6: Calculate the average of the movies in a category
 function moviesAverageByCategory(array) {
-  let categoria = "Action";
+  let categoria = 'Drama';
   
   let dramaMovies = array.filter(x => x.genre == categoria);
   let averageMovies = dramaMovies.reduce((acc, crr) => acc + crr.score , 0);
-  let averageScore = averageMovies/dramaMovies.lenght;
-  return averageScore;
+  var averageScores = averageMovies/dramaMovies.length;
+  console.log("Ejercicio 6 ->", averageScores);
+  return averageScores;
 }
 
 // Exercise 7: Modify the duration of movies to minutes
