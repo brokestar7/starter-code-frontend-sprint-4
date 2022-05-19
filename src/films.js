@@ -70,7 +70,13 @@ function moviesAverageByCategory(array) {
 }
 
 // Exercise 7: Modify the duration of movies to minutes
-function hoursToMinutes() {
+function hoursToMinutes(array) {
+  let hour = array.time.split('')[0];
+  let minute = array.time.split()
+  let myRegex = /[0-9]/ig;
+  let newArray =  array.duration.match(myRegex);
+  console.log("ejercicio 7 funca?",newArray);
+  return newArray;
 
 }
 
@@ -80,7 +86,10 @@ function bestFilmOfYear(array) {
 
   let movies = array.filter(x => x.year == year);
   let moviesSort = movies.sort((a,b)=>{b-a});
-  return moviesSort[0];
+  moviesSort.slice(0,1);
+  console.log("Ejercicio 8 movies", moviesSort);
+
+  return moviesSort;
   
 }
 
